@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/merch', (req, res) => {
+	res.sendFile(path.join(__dirname, './files/merch/shop.html'))
+})
+
+app.get('/merch/order', (req, res) => {
 	res.sendFile(path.join(__dirname, './files/merch/order.html'))
 });
 
