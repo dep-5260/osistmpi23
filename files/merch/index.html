@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<title>AKSSESS 2023 | Merch Store</title>
+</head>
+<body>
+		<br>
+		<center>
+			<h3>Merch Pre Order Store</h3>
+		</center>
+		<br>
+		<br>
+		<br>
+		<div style="width: 50%; margin: 0 auto;">
+			<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Nama anda" aria-label="Username" aria-describedby="basic-addon1" id="name" required>
+</div>
+
+<div class="input-group mb-3">
+  <input type="email" class="form-control" placeholder="Email anda" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" required>
+</div>
+
+			<select class="form-select" aria-label="Default select example" id="bajupertama">
+			  <option selected>Pilih Baju Pertama</option>
+				<option value="TIB">Tidak ingin beli</option>
+				<option value="B1S">Baju Pertama - Size Small</option>
+				<option value="B1M">Baju Pertama - Size Medium</option>
+				<option value="B1L">Baju Pertama - Size Large</option>
+				<option value="B1XL">Baju Pertama - Size Extra Large</option>
+			</select>
+
+			<br>
+			<br>
+
+			<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
+  <label class="form-check-label" for="flexRadioDefault1">
+    Saya menyetujui seluruh syarat dan ketentuan dalam mempesan Merch di store AKSSESS 2023 ini. Saya juga bertanggung jawab atas semua yang saya lakukan. Saya juga akan membayar di tempat, waktu pembagian merch diadakan.
+  </label>
+
+	<br>
+	
+	<center>
+		<br>
+		<button type="submit" class="btn btn-success" id="submitButton">Saya sudah cek ulang dan ingin mempesan sekarang</button>
+	</center>
+</div>
+		</div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		const submitButton = document.getElementById('submitButton');
+		submitButton.addEventListener('click', function(event) {
+  			const name = document.getElementById('name').value;
+			const email = document.getElementById('email').value;
+			if(!name || !email) return location.href = "/merch?failed=true"
+  			console.log(`name: ${name} , email: ${email}`)
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* ==========================================================================
+  Author: Alex Megahy
+  Date: 10/10/2019
+  Version: 1
+========================================================================== */
+
+
+/* ==========================================================================
+  Default tags
+========================================================================== */
+body{
+    margin: 0;
+    padding: 0;
+    background:#7EC384;
+}
+
+/* Row container for items
+========================================================================== */
+.row {
+    display: inline-flex;
+}
+
+/* Item container 
+========================================================================== */
+.item {
+  width: 25%;
+  height: auto;
+  margin: 3% .5% 0 .5%;
+  position: relative;
+  padding: 1% 1% 0 1%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-image: linear-gradient(to bottom right, #ececec38, #e6e6e6ed);
+}
+
+.item:hover {
+  box-shadow: 12px 12px 8px 0px #b7b7b7;
+  cursor: pointer;
+  margin: 1% .5% 0 .5%;
+}
+
+/* Item image 
+========================================================================== */
+.item img {
+  width: 98%;
+  height: 60%;
+  margin: 1%;
+  position: relative;
+}
+
+/* Item name 
+========================================================================== */
+.item h2 {
+  font-size: 2vw;
+}
+
+/* Item price 
+========================================================================== */
+.item h3 {
+  font-size: 1.6vw;
+  display: inline;
+}
+
+/* Hidden item description 
+========================================================================== */
+.item .des {
+  display: none;
+}
+
+/* "Out Of Stock" banner 
+========================================================================== */
+.outOfStock {
+  z-index: 1;
+  position: absolute;
+  background-color: #e6e6e63d;
+  height: 100%;
+  margin: -4% 0 0 -4%;
+  width: 100%;
+}
+
+.outOfStock .banner{
+  margin: 35% 0;
+  font-size: 3vw;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+  padding: 5%;
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+/* Pop up item banner
+========================================================================== */
+.pop-up {
+  z-index: 2;
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  background-color: #000000eb;
+  color: #fff;
+  display: none;
+}
+
+.pop-up .itemInfo {
+  width: 50vw;
+  height: 30vw;
+  max-height: 50vh;
+  margin: 25vh 5vw 5vh 5vw;
+  display: inline-block;
+  top: 0;
+  position: absolute;
+}
+
+.pop-up img {
+  width: 25vw;
+  height: 30vw;
+  max-height: 50vh;
+  margin: 25vh 5vw;
+}
+
+.pop-up h2 {
+  font-size: 3vw;
+}
+
+.pop-up h3 {
+  font-size: 1.6vw;
+  display: inline;
+}
+
+.pop-up p {
+  font-size: 2vw;
+  font-family: inherit;
+}
+
+.pop-up i {
+  font-size: 2.5vw;
+  float: right;
+  margin-left: 20px;
+  margin-top: 0;
+}
+
+/* Close button */
+.pop-up i:first-child {
+  color: #dc0000;  
+}
+
+.pop-up i:first-child:active {
+  color: #8c0202;;  
+}
+
+.pop-up i:hover {
+  cursor: pointer;
+  margin-top: -1vh;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+/* 800px screens */
+@media only screen and (max-width: 800px) {
+
+  .pop-up img {
+    width: 30%;
+    margin: 20vh 1%;
+  }
+}
+
+/* 500px screens */
+@media only screen and (max-width: 500px) {
+
+  .pop-up .itemInfo {
+    margin: 35vh 5vw 5vh 5vw;
+  }
+
+  .pop-up img {
+    margin: 35vh 1vw;
+  }
+
+  .pop-up h2 {
+    font-size: 4vw;
+    margin: 0;
+  }
+
+  .pop-up h3 {
+    font-size: 2vw;
+  }
+
+ .pop-up p {
+    font-size: 2.5vw;
+  }
+}
